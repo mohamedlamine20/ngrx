@@ -7,8 +7,12 @@ export const getPosts = createSelector(getPostsState,(state)=>{
     return state.posts;
 })
 
-export const getPostById = createSelector(getPostsState,(state:PostsState )=>{
 
-return state.posts[0];
 
-}) 
+
+export const getPostById =(id: number) => createSelector(getPostsState,(state:PostsState )=>{
+
+  return state.posts.find((post)=>post.id===id)
+  
+  }) 
+
