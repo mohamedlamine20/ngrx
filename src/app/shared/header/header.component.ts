@@ -12,14 +12,14 @@ import { AppState } from 'src/app/store/app.state';
 })
 export class HeaderComponent implements OnInit {
 
-  isAuthenticated !: Observable<boolean>;
+  isAuthenticated$ !: Observable<boolean>;
 
   constructor(private store: Store<AppState>) {
 
   }
   ngOnInit(): void {
 
-    this.isAuthenticated = this.store.select(isAuthenticated);
+    this.isAuthenticated$ = this.store.select(isAuthenticated);
 
   }
 

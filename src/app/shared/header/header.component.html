@@ -16,14 +16,14 @@
         <li class="nav-item">
           <a class="nav-link" href="#" [routerLink]="['/posts']">Posts</a>
         </li>
-        <li *ngIf="!(isAuthenticated | async)" class="nav-item">
+        <li *ngIf="!(isAuthenticated$ | async)" class="nav-item">
           <a class="nav-link" href="#" [routerLink]="['/auth']">Login</a>
         </li>
-        <li *ngIf="!(isAuthenticated | async)" class="nav-item">
+        <li *ngIf="!(isAuthenticated$ | async)" class="nav-item">
           <a class="nav-link" href="#" [routerLink]="['/auth/signup']">signup</a>
         </li>
 
-        <li *ngIf="isAuthenticated | async" class="nav-item">
+        <li *ngIf="isAuthenticated$ | async" class="nav-item">
           <a class="nav-link" href="#"(click)="onLogout($event)" >logout</a>
         </li>
       </ul>
