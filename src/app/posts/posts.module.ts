@@ -9,25 +9,25 @@ import { StoreModule } from "@ngrx/store";
 import { postReducer } from "./state/post.reducer";
 
 
-const routes : Routes =[
+const routes: Routes = [
     {
-        
-        path:'',component:PostsListComponent,
-    children:[{
-        path:'add',component:AddpostComponent
-    },
-    {
-        path:'edit/:id',component:EditPostComponent
 
-    }
-]
+        path: '', component: PostsListComponent,
+        children: [{
+            path: 'add', component: AddpostComponent
+        },
+        {
+            path: 'edit/:id', component: EditPostComponent
+
+        }
+        ]
     }
 ]
 
 @NgModule({
-    declarations:[AddpostComponent,PostsListComponent,EditPostComponent],
-    imports:[CommonModule,ReactiveFormsModule,RouterModule.forChild(routes),StoreModule.forFeature('posts',postReducer)]
+    declarations: [AddpostComponent, PostsListComponent, EditPostComponent],
+    imports: [CommonModule, ReactiveFormsModule, RouterModule.forChild(routes), StoreModule.forFeature('posts', postReducer)]
 })
-export class PostModule{
+export class PostModule {
 
 }
