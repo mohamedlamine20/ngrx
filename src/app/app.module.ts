@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { AppRoutingModule } from './app-routing-module';
 import { EffectsModule } from '@ngrx/effects';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component'
 import { appReducer } from './store/app.state';
 import { AuthEffect } from './auth/state/auth.effect';

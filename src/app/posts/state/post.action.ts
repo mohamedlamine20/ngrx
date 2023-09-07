@@ -12,16 +12,25 @@ export const LOAD_POST_SUCCESS = '[post page]load post success';
 
 export const ADD_POST_SUCCESS = '[post page]add post success';
 
+export const UPDATE_POST_SUCCESS = '[post page]update post success';
+
+export const DELETE_POST_SUCCESS = '[post page]delete post success';
+
 
 
 export const addPost = createAction(ADD_POST_ACTION, props<{ post: Post }>());
 
 export const updatePost = createAction(UPDATE_POST_ACTION, props<{ post: Post }>());
 
-export const deletePost = createAction(DELETE_POST_ACTION, props<{ id: number }>());
+export const deletePost = createAction(DELETE_POST_ACTION, props<{ id: string }>());
 
 export const loadPost = createAction(LOAD_POST);
 
 export const loadPostSuccess = createAction(LOAD_POST_SUCCESS,props<{posts:Post[]}>());
 
 export const addPostSuccess=createAction(ADD_POST_SUCCESS,props<{post:Post}>()); 
+
+
+export const updatePostSuccess = createAction(UPDATE_POST_SUCCESS,props<{post:Post}>());
+
+export const deletePostSuccess = createAction(DELETE_POST_SUCCESS, props<{ id: string }>());

@@ -40,7 +40,7 @@ export class EditPostComponent implements OnInit{
     this.activeRoute.paramMap.subscribe(
       (params)=>{
        const id = params.get('id');   
-       this.store.select(getPostById(parseInt(id?id:'0')))
+       this.store.select(getPostById(id?id:''))
        .subscribe(
         (post)=>{         
           this.post= post?post:{title:'',description:''};
