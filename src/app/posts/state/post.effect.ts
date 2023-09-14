@@ -2,8 +2,10 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { PostService } from "src/app/services/post.service";
 import { addPost, addPostSuccess, deletePost, deletePostSuccess, loadPost, loadPostSuccess, updatePost, updatePostSuccess } from "./post.action";
-import { map, mergeMap, of, switchMap } from "rxjs";
-import { updateChannelName } from "src/app/counter/state/counter.actions";
+import {map, mergeMap,  switchMap } from "rxjs";
+import { AppState } from "src/app/store/app.state";
+import { Store } from "@ngrx/store";
+import { getPosts } from "./post.selector";
 
 
 @Injectable()
@@ -19,7 +21,6 @@ export class PostEffects{
             mergeMap((action)=>{
              return this.postService.getPosts().pipe(
                map(data=>{
-                console.log(data);
                 
                return loadPostSuccess({posts : data})
               })
@@ -35,7 +36,7 @@ export class PostEffects{
             mergeMap((action)=>{
                 return this.postService.addPost(action.post).pipe(
                    map((data)=>{
-                    const post = {...action.post,id:data.name}
+                    const post = data
                     return addPostSuccess({post});
                    })
                 )

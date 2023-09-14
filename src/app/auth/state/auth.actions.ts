@@ -18,7 +18,7 @@ export const LOGOUT_ACTION = '[login page]logout '
 
 export const LoginStart = createAction(LOGIN_START, props<{ email: any, password: any }>());
 
-export const LoginSuccess = createAction(LOGIN_SUCCESS, props<{ user: User ,redirect :boolean}>());
+export const LoginSuccess = createAction(LOGIN_SUCCESS, props<{ user: User | null ,redirect :boolean}>());
 
 export const LoginFailed = createAction(LOGIN_FAILED);
 
