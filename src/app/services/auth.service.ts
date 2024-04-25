@@ -10,7 +10,7 @@ import { User } from '../models/user.mode';
 export class AuthService {
 
   timeoutInterval :any;
-  url='http://localhost:8080/auth'
+  url='http://localhost:32050/auth'
 
   constructor(private http: HttpClient) { }
 

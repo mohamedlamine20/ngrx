@@ -10,7 +10,7 @@ import { deletePost } from '../posts/state/post.action';
 export class PostService {
    
   url:string='https://vue-completecourse.firebaseio.com/posts.json';
-  localUrl ='http://localhost:8080/post';
+  localUrl ='http://localhost:32050/post';
 
   constructor(private http:HttpClient) { }
 
