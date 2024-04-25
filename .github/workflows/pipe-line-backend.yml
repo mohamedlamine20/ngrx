@@ -18,7 +18,7 @@ jobs:
 
       - name : build
         run : |
-          docker build -t dev19med/counter-up .
+          docker build -t dev19med/counter-app .
           docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{secrets.DOCKER_HUB_PASSWORD}}
           docker push dev19med/counter-app
 
