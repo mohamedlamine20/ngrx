@@ -8,5 +8,5 @@ spec:
     app: app-counter
   ports:
   - port: 80
-    NodePort: 32217
+    nodePort: 32217
     targetPort: 80
