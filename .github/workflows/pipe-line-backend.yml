@@ -1,19 +1,24 @@
-name: pipeline
-
-
-on:
-    push:
-        branches:
-            - main
-
-
+name: post
+on :
+  push :
+    branches:
+      - main
 jobs:
-    build-image:
-     runs-on: ubuntu 
-     name: build
-     steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
-          with:
-            fetch-depth: 0
-     
+  build-deploy:
+    name: build & deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name : build
+        run : |
+          docker build -t dev19med/counter-up .
+          docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{secrets.DOCKER_HUB_PASSWORD}}
+          docker push dev19med/counter-app
+
