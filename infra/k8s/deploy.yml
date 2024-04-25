@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-counter
+spec:
+  selector:
+    matchLabels:
+      app: app-counter
+  template:
+    metadata:
+      labels:
+        app: app-counter
+    spec:
+      containers:
+      - name: app-counter
+        image: dev19med/counter-app
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

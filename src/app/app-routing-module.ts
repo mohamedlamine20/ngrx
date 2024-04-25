@@ -11,6 +11,7 @@ const routes: Routes = [
         path: 'auth',
         loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
     },
+    {path:"product",loadChildren:()=>import('./fake-store/fake-store.module').then((m) => m.FakeStoreModule)}
 ]
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
